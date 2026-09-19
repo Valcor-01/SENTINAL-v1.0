@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinal"
+version = "0.1.0"
+description = "Intelligent Security & System Monitoring Platform"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Valcor-01" }]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+  "Flask>=3.0,<4",
+  "python-dotenv>=1.0,<2",
+]
+
+[tool.setuptools.packages.find]
+include = ["sentinal*"]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2,<2",
+  "pip-audit>=2.7,<3",
+  "pytest>=8,<9",
+  "ruff>=0.6,<1",
+  "twine>=5,<7",
+]
+
+[project.urls]
+Homepage = "https://github.com/Valcor-01/SENTINAL"
+Repository = "https://github.com/Valcor-01/SENTINAL"
+Issues = "https://github.com/Valcor-01/SENTINAL/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
